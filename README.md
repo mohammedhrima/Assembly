@@ -21,9 +21,9 @@
 ```
 + calling a system call:
 ```
-	 name	| code	| rax	| rdi (fd) 	| rsi			| rdx		|
-	 read	|   0  	|  0	| 0 (stdin) 	| address in register 	| length	|	 
-	 write	|   1  	|  1	| 1 (stdout)	| address in register 	| length	|	 
+	 name	| code	| rax	| rdi (fd)  | rsi                 | rdx	   |
+	 read	|   0  	|  0	| 0 (stdin) | address in register | length |	 
+	 write	|   1  	|  1	| 1 (stdout)| address in register | length |	 
 ```
 ```
 pointer = register
