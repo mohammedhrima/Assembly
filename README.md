@@ -1,25 +1,38 @@
-compiling:
+# Assembly
+
++ this is my journey toward learning assembly (for fun of course X'D)
+#### compilation:
+```
 	nasm -f elf64 -o exe.o file.asm
+```
+```
 	ld exe.o -o exe
+```
+```
 	./exe
-
-db: define byte
-
-_start: named label ._
-
-.data: where data defined before compilation
-.bss : allocate memory for futre use in stack
-.text: the code
-
-     syscall	| rax	| rdi	| rsi		| rdx		|
-     1 (write)  | 1	| fd (1)| address	| length	|	 
-
+```
+#### syntax:
+```
+	  db  : define byte
+	_start: label where the program starts
+	.data : where data defined before compilation
+	.bss  : allocate memory in stack for future use
+	.text : the program
+```
++ calling a system call:
+```
+	 name	| code	| rax	| rdi (fd) 	| rsi					| rdx		|
+	 read	|   0  	|  0	| 0 (stdin) | address in register 	| length	|	 
+	 write	|   1  	|  1	| 1 (stdout)| address in register 	| length	|	 
+```
+```
 pointer = register
 	rip index pointer
 	rsp stack pointer
 	rbp stack base pointer
-
-the control flow:
+```
+```
+the control flow of program:
 	mov rax, 1;	rip = x
 	mov rdi, 1;	rip = x + 1
 	mov rsi, text;	rip = x + 2
@@ -27,44 +40,37 @@ the control flow:
 	...		rip = x + 4
 	...		rip = x + 5
 	...		rip = x + 6
+```
 
-jmp: jump
-cmp: compare
-
+```
 after calling cmp :
-	a == b -> ZF = 1
-	a != b -> ZF = 0
-
-example 1:
+	if a == b -> ZF = 1
+	if a != b -> ZF = 0
+```
+```
+example 1: jumb if equal
 	cmp rax, 23
 	je _doThis ; this instruction will be executed if value in rax == 13
-
-example 2:
+example 2: jump if greater than
 	cmp rax, 23
 	jg _doThis
+```
 
-+ to treat register as value
++ value vs reference:
+```
 	mov rax, rbx	; move the value in rax to rbx
-	mov rax, [rbx]	; load the address of rax
-
-+ push, pop
-
+	mov rax, [rbx]	; load the address of rax in rbx
+```
++ push or pop value from stack
+```
+	push, 5 ; push 5 to the stack
+	pop rax ; pop 5 from stack to rax
+```
 + macros:
+```
 	%macro <name> <argc>
 		...
 		<macro body>
 		...
 	%endmacro
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
