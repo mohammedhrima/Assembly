@@ -1,6 +1,6 @@
 # Assembly
 
-+ this is my journey toward learning assembly (for fun of course X'D)
++ this is my journey towards learning assembly (for fun of course X'D)
 #### compilation:
 ```
 	nasm -f elf64 -o exe.o file.asm
