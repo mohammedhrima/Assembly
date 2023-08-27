@@ -1,6 +1,6 @@
 # Assembly
-+ source https://www.computerenhance.com/p/table-of-contents
-+ this is my journey towards learning assembly
+
++ this is my journey towards learning assembly (for fun of course X'D)
 #### compilation:
 ```
 	nasm -f elf64 -o exe.o file.asm
@@ -74,3 +74,7 @@ example 2: jump if greater than
 		...
 	%endmacro
 ```
+
+
+
+
