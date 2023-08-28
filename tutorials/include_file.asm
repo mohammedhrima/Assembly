@@ -1,4 +1,4 @@
-%include "10-include_file.inc"
+%include "include_file.inc"
 
 section .data
     text db "hello world", 10

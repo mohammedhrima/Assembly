@@ -55,7 +55,24 @@
       SI      Source index
       DI      Destination index
 
-+ 8086 Decoder code review: 18:43    
++ 8086 Decoder code review: 18:43
++ Simulating Non-memory MOVs:
++ Simulating ADD, SUB, and CMP
+	- FLAGS:
+        + ZF: Zero Flag     zero / nonezero
+        + PF: Parody Flag   even / odd
+        + SF: Sign Flag     negative / positive
+        + ...
+
+	 
+
+
+
+
+
+
+
+
 
 
 
