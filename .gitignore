@@ -1,3 +1,6 @@
-.vscode
-*/*.o
-*/exe
+# Ignore all hidden folders
+.*
+# Ignore the a.out file
+a.out
+# Ignore a.out in all subdirectories recursively
+**/a.out

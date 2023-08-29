@@ -1,8 +1,14 @@
-int main(void)
+#include <unistd.h>
+
+int ft_strlen(char *str)
 {
-    char *str = "abcd";
     int i = 0;
     while(str[i])
         i++;
     return i;
 }
+
+int main()
+{
+    return ft_strlen("abc");
+};
